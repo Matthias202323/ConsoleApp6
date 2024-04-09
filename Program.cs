@@ -17,7 +17,7 @@
 
             while (UserEntry3 != 10000)
             {
-                Console.WriteLine("Limite inférieure Entrez un nombre ou q pour quitter.");
+                Console.WriteLine("Limite 1 Entrez un nombre ou q pour quitter.");
                 string ligne = Console.In.ReadLine();
                 if (ligne != "q")
                 {
@@ -32,7 +32,7 @@
                 }
                 else { Environment.Exit(0); }
 
-                Console.WriteLine("Limite supérieure Entrez un nombre ou q pour quitter.");
+                Console.WriteLine("Limite 2 Entrez un nombre ou q pour quitter.");
                 string ligne2 = Console.In.ReadLine();
                 if (ligne2 != "q")
                 {
@@ -64,16 +64,25 @@
                 // IsOk1 = int.TryParse(UserEntry1 , out num);
                 // IsOk2 = int.TryParse(UserEntry2 , out num);
                 // IsOk3 = int.TryParse(UserEntry3 , out num);
-                if (UserEntry3 < UserEntry1)
-                {
-                    Console.Out.WriteLine("You have entered " + UserEntry3 + " which is lower than " + UserEntry1 + " which is the minimum");
 
+                if (UserEntry2 > UserEntry1)
+                    if (UserEntry3 < UserEntry1)
+                    {
+                        Console.Out.WriteLine("You have entered " + UserEntry3 + " which is lower than " + UserEntry1 + " which is the minimum");
+                    }
+                    else{
+                        if (UserEntry3 > UserEntry2) {
+                            Console.Out.WriteLine("You have entered " + UserEntry3 + " which is higher than " + UserEntry2 + " which is the maximum");
+                        } 
 
                 }
-                if (UserEntry3 > UserEntry2)
-                {
-                    Console.Out.WriteLine("You have entered " + UserEntry3 + " which is higher than " + UserEntry2 + " which is the maximum");
 
+                if (UserEntry2 < UserEntry1)
+                    if (UserEntry3 < UserEntry2)
+                    Console.Out.WriteLine("You have entered " + UserEntry3 + " which is lower than " + UserEntry2 + " which is the minimum");
+                else {
+                    
+                   Console.Out.WriteLine("You have entered " + UserEntry3 + " which is lower than " + UserEntry2 + " which is the minimum");
 
                 }
             }
